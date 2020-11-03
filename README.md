@@ -8,4 +8,4 @@ The frontend for resume generator web app
 
 The backend of easy resume generator
 
-### <a href="https://easy-resume-backend.herokuapp.com/graphql">LIVE DEMO OF API ENDPOINT</a>
+### <a href="https://easy-resume-backend.herokuapp.com/graphql">LIVE DEMO OF API</a>
