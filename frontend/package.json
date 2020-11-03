@@ -1,0 +1,47 @@
+{
+  "name": "easy-resume-frontend",
+  "description": "The frontend of easy resume generator",
+  "author": "Innocent Okeke <innowhat@gmail.com>",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@apollo/client": "^3.2.2",
+    "@hapi/iron": "6.0.0",
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.56",
+    "clsx": "^1.1.1",
+    "faker": "^5.1.0",
+    "formik": "^2.1.7",
+    "formik-material-ui": "^3.0.0",
+    "graphql": "^14.0.2",
+    "next": "latest",
+    "notistack": "^0.9.17",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-to-print": "^2.10.0",
+    "yup": "^0.29.3"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "export": "next export",
+    "deploy": "npm run build && npm run export"
+  },
+  "keywords": [
+    "next.js",
+    "graphql",
+    "authentication",
+    "jwt",
+    "material-ui",
+    "react"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/innowhat/easy-resume-frontend"
+  },
+  "bugs": {
+    "url": "https://github.com/innowhat/easy-resume-frontend/issues"
+  }
+}
