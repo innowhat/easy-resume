@@ -11,7 +11,7 @@ import {
 } from "../../../components/Modules";
 import { profileValidationSchema } from "../../../components/Validation";
 
-const UpdateProfile = ({ profileId }) => {
+const UpdateProfile = ({ profileId, children }) => {
   const router = useRouter();
   const { loading, error, data } = useQuery(GET_PROFILE, {
     variables: { profileId: profileId },
@@ -69,7 +69,11 @@ const UpdateProfile = ({ profileId }) => {
         tools: profile.tools,
       }}
       validationSchema={profileValidationSchema}
-      buttonName={<EditIcon />}
+      buttonName={
+        <React.Fragment>
+          <EditIcon /> {children}
+        </React.Fragment>
+      }
       buttonColor="primary"
     />
   );

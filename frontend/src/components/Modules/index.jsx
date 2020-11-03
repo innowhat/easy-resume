@@ -168,7 +168,13 @@ export const CustomButton = ({
 
   return (
     <Link href={href} as={as}>
-      <Button variant={variant} color={color} size={size} disabled={disabled}>
+      <Button
+        variant={variant}
+        color={color}
+        size={size}
+        disabled={disabled}
+        style={{ margin: "auto 4px" }}
+      >
         {children}
       </Button>
     </Link>
@@ -254,6 +260,9 @@ export const HeroLayout = (props) => {
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
+      [theme.breakpoints.down("sm")]: {
+        marginTop: theme.spacing(13),
+      },
     },
     backdrop: {
       position: "absolute",

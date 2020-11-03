@@ -2,10 +2,10 @@ import { useRouter } from "next/router";
 import { useMutation } from "@apollo/client";
 import { useSnackbar } from "notistack";
 import { Button } from "@material-ui/core";
-import { DeleteForever} from "@material-ui/icons";
+import { DeleteForever } from "@material-ui/icons";
 import { DELETE_PROFILE } from "../../../components/Queries";
 
-const DeleteAction = ({ profileId }) => {
+const DeleteAction = ({ profileId, children }) => {
   const router = useRouter();
   const { enqueueSnackbar } = useSnackbar();
   const [deleteProfile] = useMutation(DELETE_PROFILE);
@@ -26,10 +26,11 @@ const DeleteAction = ({ profileId }) => {
 
   return (
     <React.Fragment>
-    <Button onClick={handleDelete}>
+      <Button onClick={handleDelete} size="small">
         <DeleteForever />
+        {children}
       </Button>
-  </React.Fragment>
+    </React.Fragment>
   );
 };
 

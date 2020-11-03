@@ -68,6 +68,7 @@ const HowItWorks = () => {
           marked="center"
           className={classes.title}
           component="h2"
+          align="center"
         >
           How it works
         </Typography>

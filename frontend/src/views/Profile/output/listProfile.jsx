@@ -11,6 +11,8 @@ import {
   ListItemIcon,
 } from "@material-ui/core";
 import { Comment } from "@material-ui/icons";
+import ShareAction from "../action/shareAction";
+import ViewAction from "../action/viewAction";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,6 +23,9 @@ const useStyles = makeStyles((theme) => ({
 
 const ListProfile = ({ profile }) => {
   const classes = useStyles();
+
+  const dateFormatter = (date) => new Date(date).toLocaleDateString();
+
   return (
     <div className={classes.root}>
       <List component="nav">
@@ -40,25 +45,21 @@ const ListProfile = ({ profile }) => {
             </ListItemAvatar>
             <ListItemText
               style={{ width: "60px" }}
-              primary={<Typography variant="caption"> {"Title"}</Typography>}
-              secondary={
+              primary={
                 <Typography variant="subtitle2" gutterBottom>
                   {profile.settings.themeTitle}
                 </Typography>
               }
-            />
-
-            <ListItemText
-              style={{ width: "30px" }}
-              primary={<Typography variant="caption"> {"Date"}</Typography>}
               secondary={
-                <Typography variant="subtitle2" gutterBottom>
-                  {profile.updatedAt}
+                <Typography variant="caption" gutterBottom>
+                  {dateFormatter(profile.updatedAt)}
                 </Typography>
               }
             />
+
             <ListItemIcon>
-              <Comment />
+              <ShareAction profileId={profile.id}> share</ShareAction>
+              <ViewAction profileId={profile.id}>view</ViewAction>
             </ListItemIcon>
           </ListItem>
         </Link>

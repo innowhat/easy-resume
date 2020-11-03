@@ -1,9 +1,9 @@
 import UpdateProfile from "../input/updateProfiles";
 
-const UpdateAction = ({ profileId }) => {
+const UpdateAction = ({ profileId, children }) => {
   return (
     <React.Fragment>
-      <UpdateProfile profileId={profileId} />
+      <UpdateProfile profileId={profileId}>{children}</UpdateProfile>
     </React.Fragment>
   );
 };

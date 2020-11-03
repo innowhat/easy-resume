@@ -13,6 +13,13 @@ const WelcomeView = (props) => {
     button: {
       minWidth: 200,
     },
+
+    h2: {
+      [theme.breakpoints.down("sm")]: {
+        fontSize: "30px",
+      },
+    },
+
     h5: {
       marginBottom: theme.spacing(4),
       marginTop: theme.spacing(4),
@@ -32,7 +39,13 @@ const WelcomeView = (props) => {
         src={backgroundImage}
         alt="increase priority"
       />
-      <Typography color="inherit" align="center" variant="h2" marked="center">
+      <Typography
+        color="inherit"
+        align="center"
+        variant="h2"
+        marked="center"
+        className={classes.h2}
+      >
         WELCOME TO EASY RESUME
       </Typography>
       <Typography

@@ -8,7 +8,7 @@ import {
 import { GET_PUBLIC_PROFILE } from "../../../components/Queries";
 import { useQuery } from "@apollo/client";
 
-const ShareAction = ({ profileId }) => {
+const ShareAction = ({ profileId, children }) => {
   //Functions
   const { data } = useQuery(GET_PUBLIC_PROFILE, {
     variables: { profileId: profileId },
@@ -24,7 +24,7 @@ const ShareAction = ({ profileId }) => {
           as={`/profile/share/${profileId}`}
         >
           <Share />
-          Share
+          {children}
         </CustomButton>
       </React.Fragment>
     );

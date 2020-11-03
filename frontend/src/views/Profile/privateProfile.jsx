@@ -45,6 +45,7 @@ const PrivateProfile = ({ profileId }) => {
   }));
   const router = useRouter();
   const componentRef = React.useRef();
+  const dateFormatter = (date) => new Date(date).toDateString();
 
   //Functions
   const { loading, error, data } = useQuery(GET_PROFILE, {
@@ -53,7 +54,6 @@ const PrivateProfile = ({ profileId }) => {
   if (loading) return <Loading />;
   if (error) return <ErrorMessage error={error} />;
   const profile = data.profile;
-
   return (
     <React.Fragment>
       <Box>
@@ -75,7 +75,9 @@ const PrivateProfile = ({ profileId }) => {
                 </Typography>
               }
               subheader={
-                <Typography variant="caption">{`updated at: ${profile.updatedAt}`}</Typography>
+                <Typography variant="caption">{`updated at: ${dateFormatter(
+                  profile.updatedAt
+                )}`}</Typography>
               }
               action={
                 <Box>

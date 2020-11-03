@@ -27,6 +27,7 @@ const Profiles = () => {
     },
   }));
   const classes = useStyles();
+
   const { loading, error, data } = useQuery(GET_PROFILES);
   if (error) return <ErrorMessage error={error} />;
   if (loading)
@@ -43,7 +44,7 @@ const Profiles = () => {
           title={<Typography variant="h5">PROFILE LIST</Typography>}
         />
         <CardContent>
-          <Box textAlign="right">
+          <Box textAlign="center">
             <AddProfile />
           </Box>
         </CardContent>
